@@ -65,7 +65,7 @@ To obtain the original images and annotation data for CoIN, please refer to the 
 - **Annotations**: The `train.json` and `test.json` files within the `annotations` directory contain annotations provided by CoIN or modified by our ASD. For consistency, all test sets originally named `val.json` in the CoIN repository have been renamed to `test.json`.
 
 ## CoIN-ASD
-The `CoIN-ASD/prompts` directory contains all prompts used to create the CoIN-ASD benchmark. The created annotations for CoIN-ASD can be downloaded from [HuggingFace](https://huggingface.co/datasets/jinpeng0528/CoIN-ASD). After downloading, please organize the data according to the directory structure described in the "Data Organization and Structure" section above.
+The `CoIN-ASD/prompts` directory contains all prompts used to create the CoIN-ASD benchmark. The created annotations for CoIN-ASD can be downloaded from [our HuggingFace page](https://huggingface.co/datasets/jinpeng0528/CoIN-ASD). After downloading, please organize the data according to the directory structure described in the "Data Organization and Structure" section above.
 
 Note that for training data, we provide multiple versions with different values of hyperparameter $X$. For example, when $X$ is set to $20$, the corresponding JSON file is named `train_x20.json`. To use a specific version, modify the `--data_path` parameter in the corresponding training script (`.sh` file) under `./scripts/Train/` directory.
 
