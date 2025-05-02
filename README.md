@@ -1,6 +1,6 @@
 # [ICML 2025] SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning
 
-This is an official implementation of the paper “SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning”, accepted by ICML 2025.
+This is an official implementation of the paper "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning", accepted by ICML 2025.
 
 ## Installation
 Our environment is set up with CUDA 12.1. To ensure a smooth installation, it is recommended to also use CUDA 12.1.
@@ -65,7 +65,9 @@ To obtain the original images and annotation data for CoIN, please refer to the 
 - **Annotations**: The `train.json` and `test.json` files within the `annotations` directory contain annotations provided by CoIN or modified by our ASD. For consistency, all test sets originally named `val.json` in the CoIN repository have been renamed to `test.json`.
 
 ## CoIN-ASD
-The `CoIN-ASD/prompts` directory contains all prompts used to create the CoIN-ASD benchmark, which can be utilized to reproduce the data transformation process in CoIN-ASD. Additionally, the `CoIN-ASD/examples` directory provides data samples from various tasks within CoIN-ASD, including both the original data (prior to transformation) and the transformed data, allowing for easy comparison and analysis.
+The `CoIN-ASD/prompts` directory contains all prompts used to create the CoIN-ASD benchmark. The created annotations for CoIN-ASD can be downloaded from [HuggingFace](https://huggingface.co/datasets/jinpeng0528/CoIN-ASD). After downloading, please organize the data according to the directory structure described in the "Data Organization and Structure" section above.
+
+Note that for training data, we provide multiple versions with different values of hyperparameter $X$. For example, when $X$ is set to $20$, the corresponding JSON file is named `train_x20.json`. To use a specific version, modify the `--data_path` parameter in the corresponding training script (`.sh` file) under `./scripts/Train/` directory.
 
 ## Pre-trained Weights
 Before starting the training process, you need to download three pre-trained models:
@@ -83,6 +85,16 @@ We organize the downloaded models in the following directory structure:
 
 ## Training and Evaluation
 Once the data transformation is complete and structured correctly, you can initiate training by running `./scripts/Train/Train_all.sh`. This script will automatically invoke `./scripts/Eval/Eval_all.sh` after training each task to evaluate all learned tasks. For further details, please refer to the corresponding files.
+
+## Citation
+```
+@inproceedings{chen2025sefe,
+  title={SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning},
+  author={Chen, Jinpeng and Cong, Runmin and Zhao, Yuzhi and Yang, Hongzheng and Hu, Guangneng and Ip, Horace Ho Shing and Kwong, Sam},
+  booktitle={ICML},
+  year={2025}
+}
+```
 
 ## Acknowledgement
 This repository is built upon the [LLaVA](https://github.com/haotian-liu/LLaVA) and [CoIN](https://github.com/zackschen/CoIN) projects. We would like to express our gratitude to the authors for their contributions to the community.
