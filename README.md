@@ -1,6 +1,7 @@
 # [ICML 2025] SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning
 
 This is an official implementation of the paper "SEFE: Superficial and Essential Forgetting Eliminator for Multimodal Continual Instruction Tuning", accepted by ICML 2025.
+📝 [Paper](https://arxiv.org/abs/2505.02486)
 🤗 [CoIN-ASD Benchmark](https://huggingface.co/datasets/jinpeng0528/CoIN-ASD)
 
 ## Installation
